@@ -2,6 +2,9 @@ flag=true
 
 pipeline {
   agent any
+    tools {
+      maven 'Maven'
+    }
   environment {
     NEW_VERSION = '1.3.0'
   }
@@ -11,6 +14,7 @@ pipeline {
         echo 'Building..'
         // Here you can define commands for your 
         echo "building version ${New_VERSION}"
+        bat "nvm install"
       }
     }
     stage('Test') {
