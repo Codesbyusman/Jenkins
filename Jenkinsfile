@@ -21,4 +21,15 @@ pipeline {
     }
   
   }
+  post {
+    // the conditions after build
+    always {
+      echo 'will run always'
+    }
+    failure {
+      echo 'failed condition'
+    }
+    success {
+      echo 'success condition'
+    }
 }
