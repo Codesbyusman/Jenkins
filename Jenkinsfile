@@ -14,14 +14,7 @@ pipeline {
     NEW_VERSION = '1.3.0'
   }
   stages {
-    
-      
     stage('Build') { 
-        when {
-          expression{
-            flag == false
-          }
-        }
       steps {
         echo 'Building..'
         // Here you can define commands for your 
