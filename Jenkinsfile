@@ -32,4 +32,5 @@ pipeline {
     success {
       echo 'success condition'
     }
+  }
 }
