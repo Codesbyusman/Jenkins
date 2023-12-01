@@ -2,6 +2,11 @@ flag=true
 
 pipeline {
   agent any
+    parameters {
+      string(name: 'VERSION',defaultValue:'',description:'version to deploy on prod')
+      choice(name: 'VERSION',choices:['1.1.0','1.2.0','1.3.0'],description:'')
+      booleanParam(name:'executesTests',defaultValue: true, description:'')
+    }
     tools {
       maven 'Maven'
     }
@@ -14,16 +19,16 @@ pipeline {
         echo 'Building..'
         // Here you can define commands for your 
         echo "building version ${New_VERSION}"
-        bat "nvm install"
+        // bat "nvm install"
       }
     }
     stage('Test') {
       steps {
-         // when {
-         //    expression { 
-         //      flag == false
-         //    }
-         //  }
+         when {
+            expression { 
+               prams.executeTests
+            }
+          }
         echo 'Testing..'
       // Here you can define commands for your tests
       }
