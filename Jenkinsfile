@@ -29,6 +29,10 @@ pipeline {
          //       prams.executeTests
          //    }
          //  }
+        if (expression)
+        {
+          prams.executeTests
+        }
         echo 'Testing..'
       // Here you can define commands for your tests
       }
