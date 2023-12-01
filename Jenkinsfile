@@ -24,11 +24,11 @@ pipeline {
     }
     stage('Test') {
       steps {
-         when {
-            expression { 
-               prams.executeTests
-            }
-          }
+         // when {
+         //    expression { 
+         //       prams.executeTests
+         //    }
+         //  }
         echo 'Testing..'
       // Here you can define commands for your tests
       }
