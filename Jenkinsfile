@@ -7,9 +7,9 @@ pipeline {
       choice(name: 'VERSION',choices:['1.1.0','1.2.0','1.3.0'],description:'')
       booleanParam(name:'executesTests',defaultValue: true, description:'')
     }
-    tools {
-      maven 'Maven'
-    }
+    // tools {
+    //   maven 'Maven'
+    // }
   environment {
     NEW_VERSION = '1.3.0'
   }
