@@ -16,6 +16,11 @@ pipeline {
   stages {
     stage('Build') {
       steps {
+        when {
+          expression{
+            flag == false
+          }
+        }
         echo 'Building..'
         // Here you can define commands for your 
         echo "building version ${New_VERSION}"
